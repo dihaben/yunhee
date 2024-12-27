@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+  }
+}
+
+.hero-background {
+  background-image: url('/images/herobg.jpeg');
+  @apply bg-cover bg-center bg-no-repeat;
+}
+
+.shine-text {
+  background: linear-gradient(to right, #fff 20%, #ffcc00 40%, #ffcc00 60%, #fff 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes bounce-x {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+@keyframes bounce-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.bounce-x {
+  animation: bounce-x 1s ease-in-out infinite;
+}
+.bounce-y {
+  animation: bounce-y 1s ease-in-out infinite;
+}
